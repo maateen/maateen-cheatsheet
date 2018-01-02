@@ -8,7 +8,7 @@ It's my personal cheatsheet. Please feel free to make it usable for you.
 Run PostgreSQL in docker container:
 
 ```
-$ docker run -d -p host_port:container_port --name container_name -e POSTGRES_PASSWORD=password postgres
+$ docker run -d -p host_port:container_port -v local_path:/path/on/container --name container_name -e POSTGRES_PASSWORD=password postgres
 ```
 
 Login to the PostgreSQL:
@@ -17,10 +17,24 @@ Login to the PostgreSQL:
 $ docker exec -it {CONTAINER ID} psql -U postgres
 ```
 
+### Create User
+
+```
+CREATE ROLE "db_username" WITH SUPERUSER LOGIN PASSWORD 'password';
+```
+
+### Create Database
+
 Create a database named "db_name".
 
 ```
 # CREATE DATABASE db_name;
+```
+
+### Connect to a Database
+
+```
+# \c db_name
 ```
 
 ### Backup
