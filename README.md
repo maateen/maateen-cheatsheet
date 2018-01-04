@@ -1,6 +1,14 @@
 # maateen's cheatsheet
 It's my personal cheatsheet. Please feel free to make it usable for you.
 
+## Docker
+
+### Start, Up, Stop, Down a single container
+
+```
+$ docker-compose start/up -d/stop/down {container_name}
+```
+
 ## PostgreSQL
 
 ### Install & Run
@@ -20,7 +28,7 @@ $ docker exec -it {CONTAINER ID} psql -U postgres
 ### Create User
 
 ```
-CREATE ROLE "db_username" WITH SUPERUSER LOGIN PASSWORD 'password';
+# CREATE ROLE "db_username" WITH SUPERUSER LOGIN PASSWORD 'password';
 ```
 
 ### Create Database
@@ -43,4 +51,12 @@ After applying the command, we will see the password prompt:
 
 ```
 $ pg_dump -U db_username -h db_hostname -W db_name > /path/to/backup/file.sql
+```
+
+### Restore
+
+After applying the command, we will see the password prompt:
+
+```
+$ psql -U db_username -h db_hostname -W -d db_name -f /path/to/backup/file.sql
 ```
