@@ -25,10 +25,16 @@ Login to the PostgreSQL:
 $ docker exec -it {CONTAINER ID} psql -U postgres
 ```
 
-### Create User
+### Create Super User
 
 ```
 # CREATE ROLE "db_username" WITH SUPERUSER LOGIN PASSWORD 'password';
+```
+
+### Create Normal User
+
+```
+# CREATE ROLE "db_username" WITH LOGIN PASSWORD 'password';
 ```
 
 ### Create Database
@@ -36,19 +42,19 @@ $ docker exec -it {CONTAINER ID} psql -U postgres
 Create a database named "db_name".
 
 ```
-# CREATE DATABASE db_name;
+# CREATE DATABASE "db_name";
+```
+
+### Granting privileges on database
+
+```
+# grant all privileges on database "db_name" to "username";
 ```
 
 ### Connect to a Database
 
 ```
 # \c db_name
-```
-
-### Granting privileges on database
-
-```
-# grant all privileges on database <dbname> to <username> ;
 ```
 
 ### Backup
