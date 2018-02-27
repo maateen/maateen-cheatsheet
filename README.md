@@ -45,6 +45,12 @@ Create a database named "db_name".
 # \c db_name
 ```
 
+### Granting privileges on database
+
+```
+# grant all privileges on database <dbname> to <username> ;
+```
+
 ### Backup
 
 After applying the command, we will see the password prompt:
