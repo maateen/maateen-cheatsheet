@@ -51,6 +51,14 @@ Create a database named "db_name".
 # grant all privileges on database "db_name" to "username";
 ```
 
+### Granting privileges on all tables of a database
+
+> Connect to the `db_name` before running the following command:
+
+```
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "username";
+```
+
 ### Connect to a Database
 
 ```
