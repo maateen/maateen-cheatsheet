@@ -59,6 +59,24 @@ Create a database named "db_name".
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "username";
 ```
 
+### Grant connect to a database
+
+```
+GRANT connect ON DATABASE "database_name" TO "rolename";
+```
+
+### Revoke CONNECT on the template1 database 
+
+```
+REVOKE CONNECT ON DATABASE template1 FROM PUBLIC;
+```
+
+### Revoke connect to a newly created database
+
+```
+REVOKE connect ON DATABASE "database_name" FROM PUBLIC;
+```
+
 ### Connect to a Database
 
 ```
