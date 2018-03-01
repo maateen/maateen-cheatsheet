@@ -6,13 +6,14 @@ It's my personal cheatsheet. Please feel free to make it usable for you.
 ### Start, Up, Stop, Down a single container
 
 ```
-$ docker-compose start/up -d/stop/down {container_name}
+$ docker-compose start/up -d/stop/down/restart {container_name}
 ```
 
 ## PostgreSQL
 
 ### Install & Run
 
+#### In docker container
 Run PostgreSQL in docker container:
 
 ```
@@ -23,6 +24,20 @@ Login to the PostgreSQL:
 
 ```
 $ docker exec -it {CONTAINER ID} psql -U postgres
+```
+
+#### Login to a normal Postgresql
+
+```
+psql -h db_host -p db_port -U db_username db_name -W
+```
+
+### Revoke CONNECT on the template1 database 
+
+To every new database, no user will be able to connect.
+
+```
+REVOKE CONNECT ON DATABASE template1 FROM PUBLIC;
 ```
 
 ### Create Super User
@@ -45,6 +60,12 @@ Create a database named "db_name".
 # CREATE DATABASE "db_name";
 ```
 
+### Revoke connect to a newly created database
+
+```
+REVOKE connect ON DATABASE "database_name" FROM PUBLIC;
+```
+
 ### Granting privileges on database
 
 ```
@@ -63,18 +84,6 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "username";
 
 ```
 GRANT connect ON DATABASE "database_name" TO "rolename";
-```
-
-### Revoke CONNECT on the template1 database 
-
-```
-REVOKE CONNECT ON DATABASE template1 FROM PUBLIC;
-```
-
-### Revoke connect to a newly created database
-
-```
-REVOKE connect ON DATABASE "database_name" FROM PUBLIC;
 ```
 
 ### Connect to a Database
