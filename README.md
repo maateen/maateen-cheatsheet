@@ -86,6 +86,12 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "username";
 GRANT connect ON DATABASE "database_name" TO "rolename";
 ```
 
+### Change owner of a database
+
+```
+ALTER DATABASE "db_name" OWNER TO "db_user";
+```
+
 ### Connect to a Database
 
 ```
