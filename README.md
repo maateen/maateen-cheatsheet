@@ -1,3 +1,4 @@
+
 # maateen's cheatsheet
 It's my personal cheatsheet. Please feel free to make it usable for you.
 
@@ -112,4 +113,13 @@ After applying the command, we will see the password prompt:
 
 ```
 $ psql -U db_username -h db_hostname -W -d db_name -f /path/to/backup/file.sql
+```
+
+### Create a Sudo User
+
+```
+$ adduser username
+$ usermod -aG sudo username
+$ gpasswd -a maateen docker
+$ touch /home/username/.ssh/authorized_keys
 ```
