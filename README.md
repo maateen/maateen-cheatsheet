@@ -118,8 +118,12 @@ $ psql -U db_username -h db_hostname -W -d db_name -f /path/to/backup/file.sql
 ### Create a Sudo User
 
 ```
-$ adduser username
-$ usermod -aG sudo username
-$ gpasswd -a maateen docker
-$ touch /home/username/.ssh/authorized_keys
+$ username='username'
+$ adduser $username
+$ usermod -aG sudo $username
+$ gpasswd -a $username docker
+$ mkdir -p /home/$username/.ssh
+$ touch /home/$username/.ssh/authorized_keys
+$ chown -R $username:$username /home/$username/
+$ nano /home/$username/.ssh/authorized_keys
 ```
