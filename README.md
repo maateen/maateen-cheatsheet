@@ -104,7 +104,7 @@ ALTER DATABASE "db_name" OWNER TO "db_user";
 After applying the command, we will see the password prompt:
 
 ```
-$ pg_dump -U db_username -h db_hostname -W db_name > /path/to/backup/file.sql
+$ pg_dump -U db_username -h db_hostname --port 5432 -W db_name --schema schema_name > /path/to/backup/file.sql
 ```
 
 ### Restore
@@ -112,7 +112,7 @@ $ pg_dump -U db_username -h db_hostname -W db_name > /path/to/backup/file.sql
 After applying the command, we will see the password prompt:
 
 ```
-$ psql -U db_username -h db_hostname -W -d db_name -f /path/to/backup/file.sql
+$ psql -U db_username -h db_hostname --port 5432 -W -d db_name -f /path/to/backup/file.sql
 ```
 
 ### Create a Sudo User
