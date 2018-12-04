@@ -119,7 +119,7 @@ $ psql -U db_username -h db_hostname --port 5432 -W -d db_name -f /path/to/backu
 
 ```
 $ username='username'
-$ adduser $username
+$ adduser $username --disabled-password
 $ usermod -aG sudo $username
 $ gpasswd -a $username docker
 $ mkdir -p /home/$username/.ssh
