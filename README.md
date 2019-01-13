@@ -98,6 +98,14 @@ ALTER DATABASE "db_name" OWNER TO "db_user";
 ```
 # \c db_name
 ```
+### Quick DB & Role Creation
+
+```
+sudo -u postgres psql
+postgres=# create database mydb;
+postgres=# create user myuser with encrypted password 'mypass';
+postgres=# grant all privileges on database mydb to myuser;
+```
 
 ### Backup
 
