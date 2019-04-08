@@ -81,6 +81,14 @@ REVOKE connect ON DATABASE "database_name" FROM PUBLIC;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "username";
 ```
 
+### Granting privileges on a single table of a database
+
+> Connect to the `db_name` before running the following command:
+
+```
+GRANT ALL PRIVILEGES ON TABLE schema_name.db_name TO "username";
+```
+
 ### Grant connect to a database
 
 ```
