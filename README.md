@@ -64,13 +64,13 @@ Create a database named "db_name".
 ### Revoke connect to a newly created database
 
 ```
-REVOKE connect ON DATABASE "database_name" FROM PUBLIC;
+REVOKE CONNECT ON DATABASE "database_name" FROM PUBLIC;
 ```
 
 ### Granting privileges on database
 
 ```
-# grant all privileges on database "db_name" to "username";
+# GRANT ALL PRIVILEGES ON DATABASE "db_name" TO "username";
 ```
 
 ### Granting privileges on all tables of a database
@@ -92,7 +92,7 @@ GRANT ALL PRIVILEGES ON TABLE schema_name.db_name TO "username";
 ### Grant connect to a database
 
 ```
-GRANT connect ON DATABASE "database_name" TO "rolename";
+GRANT CONNECT ON DATABASE "database_name" TO "rolename";
 ```
 
 ### Change owner of a database
@@ -110,9 +110,9 @@ ALTER DATABASE "db_name" OWNER TO "db_user";
 
 ```
 sudo -u postgres psql
-postgres=# create database mydb;
-postgres=# create user myuser with encrypted password 'mypass';
-postgres=# grant all privileges on database mydb to myuser;
+postgres=# CREATE DATABASE mydb;
+postgres=# CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypass';
+postgres=# GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
 ```
 
 ### Backup
