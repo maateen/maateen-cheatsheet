@@ -111,7 +111,7 @@ ALTER DATABASE "db_name" OWNER TO "db_user";
 ```
 sudo -u postgres psql
 postgres=# CREATE DATABASE mydb;
-postgres=# CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypass';
+postgres=# CREATE ROLE myuser WITH ENCRYPTED PASSWORD 'mypass';
 postgres=# GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
 ```
 
