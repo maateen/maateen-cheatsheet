@@ -148,5 +148,5 @@ $ vim /home/$username/.ssh/authorized_keys
 ### pgpool_password
 
 ```
-pg_md5 --config-file /usr/local/etc/pgpool.conf --md5auth --username='db_user' 'db_user'
+pg_md5 --config-file /usr/local/etc/pgpool.conf --md5auth --username='db_user' 'db_password'
 ```
