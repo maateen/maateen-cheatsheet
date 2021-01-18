@@ -120,7 +120,7 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
 After applying the command, we will see the password prompt:
 
 ```
-$ pg_dump -U db_username -h db_hostname --port 5432 -W db_name --schema schema_name > /path/to/backup/file.sql
+$ pg_dump -i -O db_name -U db_username -h db_hostname -p 5432 -W -n schema -f /path/to/backup/file.sql
 ```
 
 ### Restore
